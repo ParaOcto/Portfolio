@@ -1,5 +1,6 @@
 import styles from "./home.module.css";
 import { ReactNode } from "react";
+
 import Navbar from "../../component/Navbar/Navbar";
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
@@ -9,6 +10,8 @@ export default function HomeLayout({ children }: { children: ReactNode }) {
             <main className={styles.main}>
                 {children}
             </main>
+            {/* <Footer /> */}
         </div>
+
     );
 }
