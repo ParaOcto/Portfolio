@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #000000;
+    background-color: #1a1a1a;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -63,4 +63,8 @@
 
 .navLink:hover::after {
     width: 100%;
+}
+
+.Authentication{
+    margin-left: 48px;
 }
