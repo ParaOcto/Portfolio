@@ -1,0 +1,45 @@
+.loginButton {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 2px solid #000000;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginButton:hover {
+  background-color: #FFB22C;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 178, 44, 0.4);
+  transform: translateY(-2px);
+}
+
+
+.anonymousButton {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.anonymousButton:hover {
+  background-color: #FFB22C;
+  color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
