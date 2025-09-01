@@ -1,0 +1,125 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* background-color: #f0f0f0; */
+}
+
+.panel{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    width: 400px;
+    max-width: 90%;
+    text-align: center;
+    color: #ffffff;
+    
+}
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputLabel {
+  text-align: left;
+  font-size: 1.1rem;
+  color: #f0f0f0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 15px;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 14px 50px 14px 45px; /* Make space for both icons */
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.togglePasswordButton {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.togglePasswordButton:hover {
+  color: #FFB22C;
+}
+
+
+.inputField::placeholder {
+  color: #ccc;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #FFB22C;
+  box-shadow: 0 0 0 3px rgba(255, 178, 44, 0.3);
+}
+
+.loginButton {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: #FFB22C;
+  transform: translateY(-2px);
+}
+
+.loginButton:active {
+  background-color: #cc8800;
+  transform: translateY(0);
+}
+
+
+
+
