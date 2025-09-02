@@ -32,8 +32,10 @@
 
 .navLinks {
     display: flex;
-    gap: 80px;
+    gap: 90px;
     align-items: center;
+    margin-left: 70px;
+
 }
 
 .navLink {
@@ -66,5 +68,5 @@
 }
 
 .Authentication{
-    margin-left: 48px;
+    margin-left: 150px;
 }
