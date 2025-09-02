@@ -36,12 +36,13 @@
 
 .inputLabel {
   text-align: left;
-  font-size: 1.1rem;
-  color: #f0f0f0;
+  font-size: 1.15rem;
+  color: #7c4a03;      /* Màu cam nổi bật */
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 700;    /* Đậm hơn */
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.15); /* Đổ bóng nhẹ cho nổi bật */
 }
-
 .inputWrapper {
   position: relative;
   display: flex;
@@ -87,7 +88,9 @@
 
 
 .inputField::placeholder {
-  color: #ccc;
+  color: #bfa76a;    /* Màu cam nhạt hài hòa với giao diện */
+  opacity: 1;
+  font-weight: 400;
 }
 
 .inputField:focus {
@@ -99,8 +102,8 @@
 .loginButton {
   width: 100%;
   padding: 15px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #222;
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -111,12 +114,12 @@
 }
 
 .loginButton:hover {
-  background-color: #FFB22C;
+  background-color: #444;
   transform: translateY(-2px);
 }
 
 .loginButton:active {
-  background-color: #cc8800;
+  background-color: #111;
   transform: translateY(0);
 }
 
