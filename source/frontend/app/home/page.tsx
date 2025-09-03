@@ -1,5 +1,5 @@
 import styles from "./home.module.css";
-import { FaInstagram, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaFacebookSquare, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiThreads } from "react-icons/si";
 
 
@@ -37,6 +37,7 @@ export default async function Home(){
                         <a href="https://www.facebook.com/nguyen.ang.phon/" target="_blank" rel="noopener noreferrer" title="Facebook" className={styles.socialIcon} style={{color: '#1877F3'}}><FaFacebookSquare size={38}/></a>
                         <a href="https://www.linkedin.com/in/ph%C3%B4n-nguy%E1%BB%85n-%C4%91%C4%83ng-142805339/" target="_blank" rel="noopener noreferrer" title="LinkedIn" className={styles.socialIcon} style={{color: '#0A66C2'}}><FaLinkedin size={36}/></a>
                         <a href="https://www.threads.net/@nphon_25" target="_blank" rel="noopener noreferrer" title="Threads" className={styles.socialIcon} style={{color: '#000'}}><SiThreads size={34}/></a>
+                        <a href="https://github.com/ParaOcto" target="_blank" rel="noopener noreferrer" title="GitHub" className={styles.socialIcon} style={{color: '#000'}}><FaGithub size={34}/></a>
 
                     </div>
                 </div>
