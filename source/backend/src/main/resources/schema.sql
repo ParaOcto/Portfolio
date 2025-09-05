@@ -2,7 +2,8 @@ CREATE TABLE IF NOT EXISTS users (
     userId INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     password_hash VARCHAR(100) NOT NULL,
-    roleUser VARCHAR(15) CHECK (roleUser IN ('Phon', 'Anonymous'))
+    roleUser ENUM('Phon', 'Anonymous')
+
 );
 
 CREATE TABLE IF NOT EXISTS post (
@@ -20,3 +21,4 @@ CREATE TABLE IF NOT EXISTS comment (
     FOREIGN KEY (postId) REFERENCES post(postId),
     FOREIGN KEY (userId) REFERENCES users(userId)
 );
+
