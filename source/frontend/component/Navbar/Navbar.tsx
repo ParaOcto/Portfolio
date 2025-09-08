@@ -13,7 +13,7 @@ export default function Navbar() {
                 </Link>
             </div>
             <div className={styles.navLinks}>
-                <Link href="/projects" className={styles.navLink}>Projects</Link>
+                {/* <Link href="/projects" className={styles.navLink}>Projects</Link> */}
                 <Link href="/post" className={styles.navLink}>Post</Link>
                 <Link href="/upload" className={styles.navLink}>Upload</Link>
             </div>
