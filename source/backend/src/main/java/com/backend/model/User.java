@@ -17,6 +17,10 @@ public class User {
     private String passwordHash;
     @Column("roleUser")
     private String roleUser;
+    @Column("avatar")
+    private String avatar;
+    @Column("created_at")
+    private String createdAt;
 
     // Getters & Setters
     public Long getUserId() {
@@ -45,5 +49,19 @@ public class User {
     }
     public void setRoleUser(String roleUser) {
         this.roleUser = roleUser;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

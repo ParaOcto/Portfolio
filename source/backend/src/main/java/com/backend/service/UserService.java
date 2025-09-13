@@ -2,6 +2,7 @@ package com.backend.service;
 
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 import com.backend.model.User;
 import com.backend.repository.UserRepo;
@@ -13,7 +14,7 @@ public class UserService {
         this.userRepo = userRepo;
     }
 
-    public User findByUsername(String username) {
+    public Optional<User> findByUsername(String username) {
         return userRepo.findByUsername(username);
     }
 
