@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS users (
     userId INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50),
+    username VARCHAR(50) UNIQUE NOT NULL,
     password_hash VARCHAR(100),
     roleUser ENUM('Phon', 'user'),
     avatar VARCHAR(255),
@@ -11,6 +11,6 @@ CREATE TABLE IF NOT EXISTS post (
     postId INT AUTO_INCREMENT PRIMARY KEY,
     content TEXT NOT NULL,
     image VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

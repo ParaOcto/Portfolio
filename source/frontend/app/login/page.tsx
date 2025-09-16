@@ -11,50 +11,12 @@ export default function LoginLayout() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
-    const handleLogin = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setError(''); // Clear previous errors
-
-        // Validate inputs
-        if (!username || !password) {
-            setError('Please enter both username and password');
-            return;
-        }
-
-        try {
-            // Call your login API
-            const res = await fetch('${env.backend_host}/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            });
-
-            if (!res.ok) {
-                const errorData = await res.json();
-                setError(errorData.message || 'Login failed');
-                return;
-            }
-
-            const data = await res.json();
-            if (data.token) {
-                localStorage.setItem("token", data.token);
-                // Use Next.js router instead of window.location
-                window.location.href = '/home';
-            } else {
-                setError('No token received');
-            }
-        } catch (err) {
-            console.error('Login error:', err);
-            setError('Network error. Please try again.');
-        }
-    };
 
     return (
         <div className={styles.container}>
@@ -95,7 +57,9 @@ export default function LoginLayout() {
                             </button>
                         </div>
                     </div>
-                    <button type="submit" className={styles.loginButton}>Login</button>
+                    <button type="submit" className={styles.loginButton} disabled={isLoading}>
+                        {isLoading ? 'Logging in...' : 'Login'}
+                    </button>
                 </form>
             </div>
         </div>
