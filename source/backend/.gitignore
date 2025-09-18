@@ -1,6 +1,7 @@
 # Spring Boot configs
 application.properties
 pom.xml
+.env
 
 HELP.md
 target/
