@@ -49,6 +49,9 @@ public class MyUserDetails implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // lấy role từ DB (ví dụ field roleUser trong entity)
         String role = user.getRoleUser();
+        if (!role.startsWith("ROLE_")) {
+            role = "ROLE_" + role;
+        }
 
         // chuẩn convention Spring: role nên có prefix "ROLE_"
         return Collections.singletonList(new SimpleGrantedAuthority(role));

@@ -3,11 +3,7 @@ package com.backend.controller;
 import com.backend.service.UserService;
 
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
-
-import com.backend.service.UserService;
 import com.backend.model.Users;
 
 @RestController
