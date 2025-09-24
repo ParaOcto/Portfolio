@@ -1,15 +1,17 @@
 package com.backend.controller;
 
+import com.backend.service.UserService;
+
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 import com.backend.service.UserService;
-import com.backend.model.User;
+import com.backend.model.Users;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
     private final UserService userService;
 
@@ -17,14 +19,24 @@ public class UserController {
         this.userService = userService;
     }
 
-    // Define your endpoints here
-    @GetMapping
-    public Iterable<User> getAllUsers() {
-        return userService.getAllUsers();
+    @PostMapping("/create")
+    public Users createUser(@RequestBody Users user) {
+        return userService.createUser(user);
     }
 
-    @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.saveUser(user);
+    @PostMapping("/create-admin")
+    public Users createAdmin() {
+        Users admin = new Users();
+        admin.setUsername("phon_admin");
+        admin.setPasswordHash("phon1232005@"); // Sẽ được hash trong service
+        admin.setRoleUser("Phon");
+        admin.setAvatar("\\source\\frontend\\public");
+        
+        return userService.createUser(admin);
+    }
+    @PostMapping("/login")
+    public String loginUser(@RequestBody Users user) {
+        System.out.println(user);
+        return userService.verify(user);
     }
 }

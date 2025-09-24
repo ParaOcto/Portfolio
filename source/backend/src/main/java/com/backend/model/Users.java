@@ -1,6 +1,6 @@
 package com.backend.model;
 
-import org.springframework.data.relational.core.mapping.*;
+// import org.springframework.data.relational.core.mapping.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.data.relational.core.mapping.Column;
@@ -10,22 +10,36 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.sql.Timestamp;
 
-@Table(name = "users") // bảng trong MySQL
-public class User implements UserDetails {
+@Table(name = "users") // bảng trong schema
+public class Users implements UserDetails {
     @Id
-    @Column("userId")
+    @Column("userid")
     private Long userId;
     @Column("username")
     private String username;
     @Column("password_hash")
     private String passwordHash;
-    @Column("roleUser")
+    @Column("roleuser")
     private String roleUser;
     @Column("avatar")
     private String avatar;
     @Column("created_at")
-    private String createdAt;
+    private Timestamp createdAt;
+
+    //Constructor
+    public Users() {
+    }
+
+    public Users(Long userId, String username, String passwordHash, String roleUser, String avatar, Timestamp createdAt) {
+        this.userId = userId;
+        this.username = username;
+        this.passwordHash = passwordHash;
+        this.roleUser = roleUser;
+        this.avatar = avatar;
+        this.createdAt = createdAt;
+    }
 
     // Getters & Setters
     public Long getUserId() {
@@ -63,10 +77,10 @@ public class User implements UserDetails {
         this.avatar = avatar;
     }
 
-    public String getCreatedAt() {
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -99,5 +113,17 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
+                ", passwordHash='" + passwordHash + '\'' +
+                ", roleUser='" + roleUser + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                '}';
     }
 }

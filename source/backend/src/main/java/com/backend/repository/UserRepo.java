@@ -1,14 +1,13 @@
 
 package com.backend.repository;
 
-import com.backend.model.User;
+import com.backend.model.Users;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
 
 @Repository
-public interface UserRepo extends CrudRepository<User, Long> {
-    Optional<User> findByUsername(String username);
+public interface UserRepo extends CrudRepository<Users, Long> {
+    Users findByUsername(String username);
 }
