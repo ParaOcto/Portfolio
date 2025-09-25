@@ -61,20 +61,23 @@ public class UserController {
 
     @PostMapping("/login-anonymous")
     public ResponseEntity<Map<String, Object>> loginAnonymous() {
+        
         Users anonymousUser = new Users();
         anonymousUser.setUsername("Anonymous");
         anonymousUser.setPasswordHash("null"); // Sẽ được hash trong service
         anonymousUser.setRoleUser("Anonymous");
         anonymousUser.setAvatar("\\source\\frontend\\public\\avatar\\anonymous.png");
+        Users savedUser = userService.createUser(anonymousUser);
 
-        String token = jwtService.generateToken(anonymousUser.getUserId(), anonymousUser.getUsername(), anonymousUser.getRoleUser(), anonymousUser.getAvatar());
-        userService.createUser(anonymousUser);
+        String token = 
+            jwtService.generateToken(savedUser.getUserId(), savedUser.getUsername(), savedUser.getRoleUser(), savedUser.getAvatar());
+
         Map<String, Object> response = new HashMap<>();
         response.put("token", token);
-        response.put("userId", anonymousUser.getUserId());
-        response.put("username", anonymousUser.getUsername());
-        response.put("role", anonymousUser.getRoleUser());
-        response.put("avatar", anonymousUser.getAvatar());
+        response.put("userId", savedUser.getUserId());
+        response.put("username", savedUser.getUsername());
+        response.put("role", savedUser.getRoleUser());
+        response.put("avatar", savedUser.getAvatar());
 
         return ResponseEntity.ok(response);
     }
