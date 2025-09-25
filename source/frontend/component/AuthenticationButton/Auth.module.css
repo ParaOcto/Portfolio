@@ -1,4 +1,4 @@
-.loginButton {
+.loginButton, .profileButton, .logoutButton {
   background-color: #ffffff;
   color: #1a1a1a;
   border: 2px solid #000000;
@@ -14,7 +14,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.loginButton:hover {
+.loginButton:hover, .profileButton:hover, .logoutButton:hover {
   background-color: #FFB22C;
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(255, 178, 44, 0.4);

@@ -1,6 +1,5 @@
 package com.backend.service;
 
-import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.HashMap;
@@ -34,8 +33,12 @@ public class JWTService {
         }
     }
 
-    public String generateToken(String username) {
+    public String generateToken(Long userId , String username, String role, String avatar) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("userId", userId);
+        claims.put("role", role);
+        claims.put("avatar", avatar);
+        
         return Jwts.builder()
                 .claims()
                 .add(claims)

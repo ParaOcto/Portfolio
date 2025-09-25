@@ -28,13 +28,14 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public String verify(Users user) {
-        Authentication authentication = 
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPasswordHash()));
-        if (authentication.isAuthenticated()) {
-            return jwtService.generateToken(user.getUsername());
+    public Users verify(Users user) {
+        Users foundUser = userRepo.findByUsername(user.getUsername());
+
+        if (foundUser != null && passwordEncoder.matches(user.getPasswordHash(), foundUser.getPasswordHash())) {
+            return foundUser;
         }
-        return "Invalid Credentials";
+        return null;
     }
+
     
 }
