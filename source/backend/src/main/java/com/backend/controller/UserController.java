@@ -5,6 +5,7 @@ import com.backend.service.UserService;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
@@ -63,10 +64,10 @@ public class UserController {
     public ResponseEntity<Map<String, Object>> loginAnonymous() {
         
         Users anonymousUser = new Users();
-        anonymousUser.setUsername("Anonymous");
+        anonymousUser.setUsername("Anonymous_" + (System.currentTimeMillis() % 100000) + "_" + new Random().nextInt(1000));
         anonymousUser.setPasswordHash("null"); // Sẽ được hash trong service
         anonymousUser.setRoleUser("Anonymous");
-        anonymousUser.setAvatar("\\source\\frontend\\public\\avatar\\anonymous.png");
+        anonymousUser.setAvatar("anonymous.png");
         Users savedUser = userService.createUser(anonymousUser);
 
         String token = 
