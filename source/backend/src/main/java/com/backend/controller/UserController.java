@@ -83,5 +83,13 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/info/{userId}")
+    public ResponseEntity<Users> getUserInfo(@PathVariable Long userId) {
+        Users user = userService.getInfoByUserId(userId);
+        if (user == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        return ResponseEntity.ok(user);
+    }
 
 }

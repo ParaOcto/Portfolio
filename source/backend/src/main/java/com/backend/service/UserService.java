@@ -5,8 +5,7 @@ import com.backend.repository.UserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +15,6 @@ public class UserService {
     private UserRepo userRepo;
     @Autowired
     AuthenticationManager authenticationManager;
-    @Autowired 
-    private JWTService jwtService;
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(10);
 
@@ -35,6 +32,10 @@ public class UserService {
             return foundUser;
         }
         return null;
+    }
+
+    public Users getInfoByUserId(Long userId) {
+        return userRepo.getInfoByUserId(userId);
     }
 
     
