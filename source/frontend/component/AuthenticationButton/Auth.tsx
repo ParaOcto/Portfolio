@@ -29,7 +29,7 @@ const Auth = () => {
                 avatar: avatar || '/default-avatar.png',
                 role: role || 'user'
             });
-            router.push('/home'); // Redirect to home if already logged in
+            // Remove automatic redirect - let users stay on current page
         }
     }, [router]);
 

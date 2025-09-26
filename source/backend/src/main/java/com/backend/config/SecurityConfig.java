@@ -78,10 +78,13 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         // Cho phép tất cả truy cập /api/auth/**
-                        .requestMatchers("/api/users/login", "/api/users/create", "/api/users/create-admin", "/api/users/login-anonymous").permitAll()
+                        .requestMatchers("/api/users/**").permitAll()
                         // Chỉ user có role Phon mới được vào postStatus
                         .requestMatchers("/error").permitAll()
-                        .requestMatchers("/api/postStatus").hasRole("Phon")
+                        
+                        .requestMatchers("/api/posts/all").permitAll()
+                        
+                        .requestMatchers("/api/posts/upload").hasRole("Phon")
                         
                         // Các request khác yêu cầu authentication
                         .anyRequest().authenticated()

@@ -1,0 +1,90 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+.panel{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    width: 800px;
+    max-width: 90%;
+    text-align: center;
+    color: #333333;
+    
+}
+
+.postList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    justify-items: center;
+    align-items: start;
+}
+.postCard {
+    max-width: fit-content;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.postCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.postTitle {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333333;
+}
+.postContent {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.postDate {
+    font-size: 0.9rem;
+    color: #999999;
+    margin-bottom: 15px;
+}
+
+.postImg {
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #333333;
+}
+
+.username {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333333;
+}
