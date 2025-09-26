@@ -46,7 +46,8 @@ export default function PostPage() {
         }
     }, [userInfo.token]);
 
-    const fetchPosts = async () => {    
+    const fetchPosts = async () => {  
+        await new Promise(res => setTimeout(res, 1000));  
         try {
             const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/posts/all`, {
                 method: "GET",
@@ -94,10 +95,22 @@ export default function PostPage() {
                 {Array.isArray(posts) && posts.length > 0 ? (
                     posts.map((post, index) => (
                         <div key={post.id || index} className={styles.postCard}>
-                            <h2 className={styles.postTitle}>{post.title}</h2>
-                            <p className={styles.postContent}>{post.content}</p>
-                            <p className={styles.postDate}>By: {post.createdAt || 'Unknown'}</p>
-                            <img className={styles.postImg} src={post.image}></img>
+                            {post.image && (
+                                <img 
+                                    className={styles.postImg} 
+                                    src={post.image} 
+                                    alt={post.title || 'Post image'}
+                                />
+                            )}
+                            <div>
+                                <h2 className={styles.postTitle}>{post.title}</h2>
+                                <p className={styles.postContent}>{post.content}</p>
+                                <p className={styles.postDate}>
+                                    {post.createdAt || post.created_at 
+                                    ? new Date(post.createdAt || post.created_at).toLocaleDateString() 
+                                    : 'Unknown date'}
+                                </p>
+                            </div>
                         </div>
                     ))
                 ) : (

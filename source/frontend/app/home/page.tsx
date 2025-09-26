@@ -5,7 +5,7 @@ import { SiThreads } from "react-icons/si";
 const projects = [
     {
         title: 'Portfolio Website',
-        description: 'My personal portfolio built with Spring boot, Next.js, React, and modern CSS. Responsive, fast, and beautiful.',
+        description: 'My personal portfolio built with Spring boot, Next.js, React, and modern CSS. The purpose is to learn spring boot and how web works.',
         image: '/projects/portfolio.png',
         tech: ['Spring Boot', 'Next.js', 'React', 'CSS'],
         github: 'https://github.com/ParaOcto/Portfolio',

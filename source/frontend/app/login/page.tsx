@@ -8,6 +8,7 @@ import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 
 export default function LoginLayout() {
+    
     const [showPassword, setShowPassword] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -59,8 +60,9 @@ export default function LoginLayout() {
             setIsLoading(false);
         }
     };
-
+    
     return (
+        
         <div className={styles.container}>
             <div className={styles.panel}>
                 <div className={styles.logoContainer}>
