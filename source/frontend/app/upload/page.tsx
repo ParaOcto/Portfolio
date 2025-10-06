@@ -15,8 +15,16 @@ export default function CameraAutoRender() {
     const [content, setContent] = useState<string>('');
     const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
     const [loading, setLoading] = useState<boolean>(true);
+    const [token, setToken] = useState<string>('');
 
-    const token = localStorage.getItem('token') || '';
+    // Lấy token từ localStorage
+    useEffect(() => {
+        const storedToken = localStorage.getItem('token');
+        if (storedToken) {
+            setToken(storedToken);
+        }
+    }, []);
+
 
     // Check authorization
     useEffect(() => {
