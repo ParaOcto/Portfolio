@@ -6,6 +6,7 @@ import Navbar from "../../component/Navbar/Navbar";
 export default function HomeLayout({ children }: { children: ReactNode }) {
     return (
         <div className={styles.home}>
+        
             {/* <Navbar /> */}
             <main className={styles.main}>
                 {children}
